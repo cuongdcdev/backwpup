@@ -31,7 +31,7 @@ class BackWPup_JobType_WPEXP extends BackWPup_JobTypes {
 	 * @return array
 	 */
 	public function option_defaults() {
-		return array( 'wpexportcontent' => 'all', 'wpexportfilecompression' => '', 'wpexportfile' => sanitize_text_field( get_bloginfo( 'name' ) ) . '.wordpress.%Y-%m-%d' );
+		return array( 'wpexportcontent' => 'all', 'wpexportfilecompression' => '', 'wpexportfile' => sanitize_file_name( html_entity_decode(get_bloginfo( 'name' )) ) . '.wordpress.%Y-%m-%d' );
 	}
 
 
